@@ -37,12 +37,12 @@ const Hero = () => {
 
           {/* Greeting */}
           <p className="text-lg md:text-xl text-muted-foreground mb-6">
-            Hello, I'm Hassan 👋
+            Hello, I'm Bubba 👋
           </p>
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 max-w-5xl">
-            <span className="text-foreground">UI/UX Designer </span>
+            <span className="text-foreground">UI & GFX Designer </span>
             <span className="text-muted-foreground">crafting</span>
             <br />
             <span className="text-muted-foreground">clean & modern designs</span>
