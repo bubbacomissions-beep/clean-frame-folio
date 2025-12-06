@@ -1,24 +1,24 @@
 import { Card } from "@/components/ui/card";
-import { Palette, Monitor, Zap } from "lucide-react";
+import { Rocket, Target, Sparkles } from "lucide-react";
 
 const WhyChoose = () => {
   const features = [
     {
-      icon: Palette,
-      title: "Pixel-Perfect Layouts",
-      description: "Professional readability with attention to every detail",
+      icon: Rocket,
+      title: "Fast Delivery",
+      description: "Quick turnaround times without sacrificing quality. Get your designs delivered efficiently.",
       gradient: "from-pink-500 to-primary",
     },
     {
-      icon: Monitor,
-      title: "Multi-Device Ready",
-      description: "Import and scale for all devices FREE",
+      icon: Sparkles,
+      title: "Pixel-Perfect Quality",
+      description: "Meticulous attention to every detail ensures flawless, professional results every time.",
       gradient: "from-accent to-cyan-400",
     },
     {
-      icon: Zap,
-      title: "Lightning Fast",
-      description: "Same-day delivery with clear task breakdown",
+      icon: Target,
+      title: "Strategic Design",
+      description: "Goal-oriented designs that deliver impactful results and elevate your project.",
       gradient: "from-green-400 to-emerald-500",
     },
   ];

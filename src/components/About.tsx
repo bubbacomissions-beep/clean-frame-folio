@@ -1,29 +1,20 @@
 import { Card } from "@/components/ui/card";
-import { Lightbulb, Star, Monitor, Zap } from "lucide-react";
+import { Lightbulb, Zap, RefreshCw } from "lucide-react";
 
 const About = () => {
-  const highlights = [
+  const bullets = [
     {
+      icon: Zap,
+      question: "Need the work done fast while keeping the quality perfect?",
+      answer: "I deliver high-quality work efficiently without compromising standards.",
       color: "text-accent",
-      title: "Need UI fast?",
-      description: "I deliver in 24 hours or less",
     },
     {
-      color: "text-accent",
-      title: "Need any style?",
-      description: "I cover dark, neon, minimal, cartoony, fantasy, and more",
-    },
-    {
+      icon: RefreshCw,
+      question: "Need to adjust anything?",
+      answer: "Infinite amount of revisions is offered until you are 100% satisfied.",
       color: "text-pink-400",
-      title: "Need it perfect?",
-      description: "I offer unlimited revisions until you're 100% happy",
     },
-  ];
-
-  const whyChooseMe = [
-    { icon: Star, text: "Pixel-perfect layouts with pro readability", color: "text-yellow-400" },
-    { icon: Monitor, text: "Import and scale for all devices FREE", color: "text-accent" },
-    { icon: Zap, text: "Fast communication & clear task breakdown", color: "text-success" },
   ];
 
   return (
@@ -37,21 +28,21 @@ const About = () => {
             </h2>
             
             <p className="text-muted-foreground text-lg mb-8">
-              Hi, I'm <span className="text-foreground font-semibold">Bubba</span> — a UI & GFX Designer with years of experience crafting beautiful, game-ready UI from futuristic sci-fi dashboards to colorful RPG menus.
+              Hi, I'm <span className="text-foreground font-semibold">Bubba</span> — a UI & GFX Designer with months of experience making beautiful game thumbnails and icons, together with game-ready UI.
             </p>
 
             <div className="space-y-6">
-              {highlights.map((item, index) => (
+              {bullets.map((item, index) => (
                 <div 
-                  key={item.title}
-                  className="flex items-start gap-3 animate-fade-in-up"
+                  key={item.question}
+                  className="animate-fade-in-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className={`w-2 h-2 rounded-full ${item.color} bg-current mt-2 shrink-0`} />
-                  <p className="text-muted-foreground">
-                    <span className={`font-semibold ${item.color}`}>{item.title}</span>{" "}
-                    {item.description}
-                  </p>
+                  <div className="flex items-start gap-3 mb-2">
+                    <item.icon className={`w-5 h-5 ${item.color} shrink-0 mt-1`} />
+                    <p className={`font-semibold ${item.color}`}>{item.question}</p>
+                  </div>
+                  <p className="text-muted-foreground ml-8">{item.answer}</p>
                 </div>
               ))}
             </div>
@@ -61,19 +52,22 @@ const About = () => {
           <Card className="glass-card gradient-border p-8 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
             <div className="flex items-center gap-2 mb-6">
               <Lightbulb className="w-5 h-5 text-yellow-400" />
-              <h3 className="text-xl font-semibold">Why Choose Me?</h3>
+              <h3 className="text-xl font-semibold">What I Offer</h3>
             </div>
 
             <div className="space-y-4">
-              {whyChooseMe.map((item, index) => (
-                <div 
-                  key={item.text}
-                  className="flex items-center gap-3"
-                >
-                  <item.icon className={`w-5 h-5 ${item.color} shrink-0`} />
-                  <p className="text-muted-foreground">{item.text}</p>
-                </div>
-              ))}
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-primary" />
+                <p className="text-muted-foreground">Professional UI designs for games</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-accent" />
+                <p className="text-muted-foreground">Eye-catching thumbnails & icons</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-pink-400" />
+                <p className="text-muted-foreground">Fast delivery with unlimited revisions</p>
+              </div>
             </div>
           </Card>
         </div>
