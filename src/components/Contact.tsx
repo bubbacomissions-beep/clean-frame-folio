@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Mail, MessageSquare, Clock } from "lucide-react";
+import { MessageSquare, Clock } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -14,7 +14,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
           <Card className="glass-card gradient-border p-6 animate-fade-in-up hover:scale-105 transition-smooth">
             <div className="flex items-start gap-4">
               <div className="p-3 bg-gradient-to-br from-primary/20 to-pink-500/20 rounded-xl">
@@ -22,24 +22,12 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-semibold mb-1">Discord</h3>
-                <p className="text-muted-foreground">bubakbububu1</p>
+                <p className="text-muted-foreground">bubakbububu</p>
               </div>
             </div>
           </Card>
 
           <Card className="glass-card gradient-border p-6 animate-fade-in-up hover:scale-105 transition-smooth" style={{ animationDelay: "0.1s" }}>
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-gradient-to-br from-accent/20 to-cyan-400/20 rounded-xl">
-                <Mail className="w-6 h-6 text-accent" />
-              </div>
-              <div>
-                <h3 className="font-semibold mb-1">Email</h3>
-                <p className="text-muted-foreground text-sm">bubbacomissions@gmail.com</p>
-              </div>
-            </div>
-          </Card>
-
-          <Card className="glass-card gradient-border p-6 animate-fade-in-up hover:scale-105 transition-smooth" style={{ animationDelay: "0.2s" }}>
             <div className="flex items-start gap-4">
               <div className="p-3 bg-gradient-to-br from-success/20 to-emerald-400/20 rounded-xl">
                 <Clock className="w-6 h-6 text-success" />
@@ -50,6 +38,12 @@ const Contact = () => {
               </div>
             </div>
           </Card>
+        </div>
+
+        <div className="text-center mt-12 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          <p className="text-lg text-muted-foreground">
+            Contact Me on Discord: <span className="text-primary font-semibold">bubakbububu</span>
+          </p>
         </div>
       </div>
     </section>

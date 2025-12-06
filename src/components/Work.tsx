@@ -9,6 +9,12 @@ const Work = () => {
     { id: 4, gradient: "from-green-500/30 to-teal-500/30" },
     { id: 5, gradient: "from-indigo-500/30 to-purple-500/30" },
     { id: 6, gradient: "from-rose-500/30 to-pink-500/30" },
+    { id: 7, gradient: "from-amber-500/30 to-orange-500/30" },
+    { id: 8, gradient: "from-blue-500/30 to-indigo-500/30" },
+    { id: 9, gradient: "from-emerald-500/30 to-green-500/30" },
+    { id: 10, gradient: "from-fuchsia-500/30 to-purple-500/30" },
+    { id: 11, gradient: "from-sky-500/30 to-cyan-500/30" },
+    { id: 12, gradient: "from-violet-500/30 to-pink-500/30" },
   ];
 
   return (
@@ -16,19 +22,19 @@ const Work = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            My <span className="text-gradient-purple">Portfolio</span>
+            Past <span className="text-gradient-purple">Work</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Versatile designs — buttons, HUDs, shops, upgrades, settings, perks, and more. From dark themes to colorful styles.
+            Versatile designs including game HUDs, thumbnails, icons, and more. From dark themes to colorful styles.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {projects.map((project, index) => (
             <Card
               key={project.id}
               className="glass-card gradient-border overflow-hidden group cursor-pointer hover:scale-[1.02] transition-smooth animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{ animationDelay: `${index * 0.05}s` }}
             >
               {/* Click for better view text */}
               <div className="text-center py-2 text-sm text-muted-foreground border-b border-border/50">

@@ -49,7 +49,7 @@ const Hero = () => {
               className="mb-6 px-4 py-2 bg-success/20 text-success border-success/30 hover:bg-success/30 transition-smooth"
             >
               <Zap className="w-3 h-3 mr-2" />
-              Available for Projects
+              Open for Commissions
             </Badge>
 
             {/* Main Heading */}
@@ -61,14 +61,14 @@ const Hero = () => {
 
             {/* Description */}
             <p className="text-muted-foreground text-lg mb-8 max-w-lg">
-              Crafting beautiful, game-ready UI from futuristic sci-fi dashboards to colorful RPG menus with years of experience.
+              Crafting beautiful, game-ready UI from stunning modern themes to vibrant artistic styles, backed by years of experience.
             </p>
 
             {/* Feature Badges */}
             <div className="flex flex-wrap gap-3 mb-8 justify-center lg:justify-start">
               <Badge variant="outline" className="px-4 py-2 bg-card/50 border-border">
                 <Clock className="w-4 h-4 mr-2 text-accent" />
-                24h Delivery
+                Fast Turnaround
               </Badge>
               <Badge variant="outline" className="px-4 py-2 bg-card/50 border-border">
                 <Star className="w-4 h-4 mr-2 text-yellow-400" />
@@ -86,7 +86,7 @@ const Hero = () => {
               onClick={scrollToWork}
               className="px-8 py-6 text-lg bg-gradient-to-r from-primary to-pink-500 hover:from-primary/90 hover:to-pink-500/90 text-primary-foreground transition-smooth group glow-primary"
             >
-              View My Work
+              View Past Work
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
