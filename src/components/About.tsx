@@ -1,49 +1,81 @@
 import { Card } from "@/components/ui/card";
-import { Code2, Palette, Zap } from "lucide-react";
+import { Lightbulb, Star, Monitor, Zap } from "lucide-react";
 
 const About = () => {
-  const features = [
+  const highlights = [
     {
-      icon: Palette,
-      title: "Creative Design",
-      description: "Crafting beautiful, intuitive interfaces that users love",
+      color: "text-accent",
+      title: "Need UI fast?",
+      description: "I deliver in 24 hours or less",
     },
     {
-      icon: Code2,
-      title: "Clean Code",
-      description: "Building responsive designs with modern technologies",
+      color: "text-accent",
+      title: "Need any style?",
+      description: "I cover dark, neon, minimal, cartoony, fantasy, and more",
     },
     {
-      icon: Zap,
-      title: "Fast Delivery",
-      description: "Delivering high-quality work within agreed timelines",
+      color: "text-pink-400",
+      title: "Need it perfect?",
+      description: "I offer unlimited revisions until you're 100% happy",
     },
   ];
 
-  return (
-    <section id="about" className="py-24 bg-secondary/30">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">About Me</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Passionate UI/UX designer with a keen eye for detail and a love for creating seamless digital experiences.
-          </p>
-        </div>
+  const whyChooseMe = [
+    { icon: Star, text: "Pixel-perfect layouts with pro readability", color: "text-yellow-400" },
+    { icon: Monitor, text: "Import and scale for all devices FREE", color: "text-accent" },
+    { icon: Zap, text: "Fast communication & clear task breakdown", color: "text-success" },
+  ];
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <Card
-              key={feature.title}
-              className="p-8 bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-smooth group animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="mb-4">
-                <feature.icon className="w-12 h-12 text-primary group-hover:scale-110 transition-transform" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
-            </Card>
-          ))}
+  return (
+    <section id="about" className="py-24">
+      <div className="container mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-start">
+          {/* Left Column - About Text */}
+          <div className="animate-fade-in">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              About <span className="text-gradient-cyan">Me</span>
+            </h2>
+            
+            <p className="text-muted-foreground text-lg mb-8">
+              Hi, I'm <span className="text-foreground font-semibold">Bubba</span> — a UI & GFX Designer with years of experience crafting beautiful, game-ready UI from futuristic sci-fi dashboards to colorful RPG menus.
+            </p>
+
+            <div className="space-y-6">
+              {highlights.map((item, index) => (
+                <div 
+                  key={item.title}
+                  className="flex items-start gap-3 animate-fade-in-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className={`w-2 h-2 rounded-full ${item.color} bg-current mt-2 shrink-0`} />
+                  <p className="text-muted-foreground">
+                    <span className={`font-semibold ${item.color}`}>{item.title}</span>{" "}
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column - Why Choose Me Card */}
+          <Card className="glass-card gradient-border p-8 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+            <div className="flex items-center gap-2 mb-6">
+              <Lightbulb className="w-5 h-5 text-yellow-400" />
+              <h3 className="text-xl font-semibold">Why Choose Me?</h3>
+            </div>
+
+            <div className="space-y-4">
+              {whyChooseMe.map((item, index) => (
+                <div 
+                  key={item.text}
+                  className="flex items-center gap-3"
+                >
+                  <item.icon className={`w-5 h-5 ${item.color} shrink-0`} />
+                  <p className="text-muted-foreground">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </Card>
         </div>
       </div>
     </section>

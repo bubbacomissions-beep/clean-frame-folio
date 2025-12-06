@@ -1,67 +1,97 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import { Card } from "@/components/ui/card";
+import { ArrowRight, Clock, Star, Zap, User } from "lucide-react";
 
 const Hero = () => {
-  const scrollToContact = () => {
-    const element = document.querySelector("#contact");
+  const scrollToWork = () => {
+    const element = document.querySelector("#work");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section 
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
-      style={{
-        backgroundImage: `url(${heroBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      {/* Overlay gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background"></div>
-      
-      {/* Content */}
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col items-center text-center animate-fade-in-up">
-          {/* Commission Badge */}
-          <Badge 
-            variant="outline" 
-            className="mb-6 px-4 py-2 bg-secondary/50 backdrop-blur-sm border-success/30 hover:border-success transition-smooth"
-          >
-            <span className="w-2 h-2 bg-success rounded-full mr-2 animate-glow"></span>
-            Commissions Opened!
-          </Badge>
-
-          {/* Greeting */}
-          <p className="text-lg md:text-xl text-muted-foreground mb-6">
-            Hello, I'm Bubba 👋
-          </p>
-
-          {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 max-w-5xl">
-            <span className="text-foreground">UI & GFX Designer </span>
-            <span className="text-muted-foreground">crafting</span>
-            <br />
-            <span className="text-muted-foreground">clean & modern designs</span>
-          </h1>
-
-          {/* CTA Button */}
-          <Button 
-            size="lg"
-            onClick={scrollToContact}
-            className="mt-8 px-8 py-6 text-lg bg-transparent border-2 border-foreground hover:bg-foreground hover:text-background transition-smooth group"
-          >
-            Contact Me
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </div>
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+      {/* Floating particles effect */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-primary/30 rounded-full animate-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${4 + Math.random() * 4}s`,
+            }}
+          />
+        ))}
       </div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          {/* Profile Card */}
+          <div className="animate-fade-in-up">
+            <Card className="glass-card gradient-border p-8 w-72 flex flex-col items-center">
+              {/* Avatar Placeholder */}
+              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center mb-4 border-2 border-border">
+                <User className="w-16 h-16 text-muted-foreground" />
+              </div>
+              <h3 className="text-xl font-semibold">Bubba</h3>
+            </Card>
+          </div>
+
+          {/* Hero Content */}
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            {/* Available Badge */}
+            <Badge 
+              className="mb-6 px-4 py-2 bg-success/20 text-success border-success/30 hover:bg-success/30 transition-smooth"
+            >
+              <Zap className="w-3 h-3 mr-2" />
+              Available for Projects
+            </Badge>
+
+            {/* Main Heading */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+              <span className="text-foreground">UI Designer</span>
+              <br />
+              <span className="text-gradient-purple">Extraordinaire</span>
+            </h1>
+
+            {/* Description */}
+            <p className="text-muted-foreground text-lg mb-8 max-w-lg">
+              Crafting beautiful, game-ready UI from futuristic sci-fi dashboards to colorful RPG menus with years of experience.
+            </p>
+
+            {/* Feature Badges */}
+            <div className="flex flex-wrap gap-3 mb-8 justify-center lg:justify-start">
+              <Badge variant="outline" className="px-4 py-2 bg-card/50 border-border">
+                <Clock className="w-4 h-4 mr-2 text-accent" />
+                24h Delivery
+              </Badge>
+              <Badge variant="outline" className="px-4 py-2 bg-card/50 border-border">
+                <Star className="w-4 h-4 mr-2 text-yellow-400" />
+                Unlimited Revisions
+              </Badge>
+              <Badge variant="outline" className="px-4 py-2 bg-card/50 border-border">
+                <Zap className="w-4 h-4 mr-2 text-success" />
+                Fast Communication
+              </Badge>
+            </div>
+
+            {/* CTA Button */}
+            <Button 
+              size="lg"
+              onClick={scrollToWork}
+              className="px-8 py-6 text-lg bg-gradient-to-r from-primary to-pink-500 hover:from-primary/90 hover:to-pink-500/90 text-primary-foreground transition-smooth group glow-primary"
+            >
+              View My Work
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
