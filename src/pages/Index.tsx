@@ -6,18 +6,31 @@ import Work from "@/components/Work";
 import Pricing from "@/components/Pricing";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Index = () => {
+  const scrollRef = useScrollAnimation();
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" ref={scrollRef}>
       <Navigation />
       <main>
         <Hero />
-        <WhyChoose />
-        <Work />
-        <About />
-        <Pricing />
-        <Contact />
+        <div className="scroll-animate">
+          <WhyChoose />
+        </div>
+        <div className="scroll-animate scroll-animate-delay-1">
+          <Work />
+        </div>
+        <div className="scroll-animate scroll-animate-delay-2">
+          <About />
+        </div>
+        <div className="scroll-animate scroll-animate-delay-1">
+          <Pricing />
+        </div>
+        <div className="scroll-animate scroll-animate-delay-2">
+          <Contact />
+        </div>
       </main>
       <Footer />
     </div>

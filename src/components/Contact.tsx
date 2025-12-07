@@ -40,11 +40,6 @@ const Contact = () => {
           </Card>
         </div>
 
-        <div className="text-center mt-12 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-          <p className="text-lg text-muted-foreground">
-            Contact Me on Discord: <span className="text-primary font-semibold">bubakbububu</span>
-          </p>
-        </div>
       </div>
     </section>
   );
