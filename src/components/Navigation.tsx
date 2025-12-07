@@ -33,7 +33,7 @@ const Navigation = () => {
           <Button
             variant="outline"
             onClick={() => scrollToSection("#contact")}
-            className="hidden md:flex border-primary/50 hover:bg-primary/10 hover:border-primary transition-smooth"
+            className="hidden md:flex border-primary text-foreground hover:bg-primary hover:text-foreground hover:border-primary transition-smooth"
           >
             Contact Me
           </Button>
