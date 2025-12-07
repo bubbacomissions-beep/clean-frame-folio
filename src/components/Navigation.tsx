@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Menu, User } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useState } from "react";
+import bubbaPfp from "@/assets/bubba-pfp.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,8 +20,8 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center border border-border">
-              <User className="w-5 h-5 text-muted-foreground" />
+            <div className="w-10 h-10 rounded-full overflow-hidden border border-primary/50">
+              <img src={bubbaPfp} alt="Bubba" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col">
               <span className="text-lg font-bold">Bubba</span>

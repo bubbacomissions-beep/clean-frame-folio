@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-import { ArrowRight, Clock, Star, Zap, User } from "lucide-react";
+import { ArrowRight, Clock, Star, Zap } from "lucide-react";
+import bubbaPfp from "@/assets/bubba-pfp.png";
 
 const Hero = () => {
   const scrollToWork = () => {
@@ -30,20 +30,16 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-          {/* Profile Card */}
+        <div className="flex flex-col items-center text-center gap-8">
+          {/* Profile Picture */}
           <div className="animate-fade-in-up">
-            <Card className="glass-card gradient-border p-8 w-72 flex flex-col items-center">
-              {/* Avatar Placeholder */}
-              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center mb-4 border-2 border-border">
-                <User className="w-16 h-16 text-muted-foreground" />
-              </div>
-              <h3 className="text-xl font-semibold">Bubba</h3>
-            </Card>
+            <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-primary/50 glow-primary">
+              <img src={bubbaPfp} alt="Bubba" className="w-full h-full object-cover" />
+            </div>
           </div>
 
           {/* Hero Content */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          <div className="flex flex-col items-center animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             {/* Available Badge */}
             <Badge 
               className="mb-6 px-4 py-2 bg-success/20 text-success border-success/30 hover:bg-success/30 transition-smooth"
@@ -54,18 +50,18 @@ const Hero = () => {
 
             {/* Main Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              <span className="text-foreground">UI Designer</span>
+              <span className="text-foreground">A Professional</span>
               <br />
-              <span className="text-gradient-purple">Extraordinaire</span>
+              <span className="text-gradient-purple">UI/GFX Designer</span>
             </h1>
 
             {/* Description */}
             <p className="text-muted-foreground text-lg mb-8 max-w-lg">
-              Crafting beautiful, game-ready UI from stunning modern themes to vibrant artistic styles, backed by years of experience.
+              Making visually appealing trendy designs with months of experience.
             </p>
 
             {/* Feature Badges */}
-            <div className="flex flex-wrap gap-3 mb-8 justify-center lg:justify-start">
+            <div className="flex flex-wrap gap-3 mb-8 justify-center">
               <Badge variant="outline" className="px-4 py-2 bg-card/50 border-border">
                 <Clock className="w-4 h-4 mr-2 text-accent" />
                 Fast Turnaround
